@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ventas" Class="ServicioLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-CJ9UDHF\SQLEXPRESS01;Initial Catalog=ventas;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ventasConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.persona" Member="persona">
+    <Type Name="persona">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="edad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
