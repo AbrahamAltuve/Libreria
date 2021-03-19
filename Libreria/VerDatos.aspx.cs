@@ -9,11 +9,15 @@ namespace Libreria
 {
     public partial class VerDatos : System.Web.UI.Page
     {
+
+        Personas adoPersonas = new Personas();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 GetDataLinq();
+                //GetDataAdo();
             }
             
         }
@@ -24,6 +28,12 @@ namespace Libreria
             var personas = from u in data.GetTable<persona>() select u;
             gridViewLinQ.DataSource = personas.ToList(); //data.GetPersonas();
             gridViewLinQ.DataBind();
+        }
+
+        public void GetDataAdo()
+        {
+            listPersonas.DataSource = adoPersonas.getPersonaAdo;
+            listPersonas.DataBind();
         }
 
     }

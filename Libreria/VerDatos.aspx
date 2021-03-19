@@ -6,6 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 23px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,8 +22,19 @@
                     <asp:BoundField DataField="edad" HeaderText="EDAD" />
                     <asp:BoundField DataField="documento" HeaderText="DOCUMENTO" />
                 </Columns>
-
             </asp:GridView>
+            <br />
+            <asp:GridView ID="gridViewAdo" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="AdoNet">
+                <Columns>
+                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                    <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+                    <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento" />
+                    <asp:BoundField DataField="edad" HeaderText="edad" SortExpression="edad" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="AdoNet" runat="server" ConnectionString="<%$ ConnectionStrings:ventasConnectionString %>" SelectCommand="SELECT * FROM [persona]"></asp:SqlDataSource>
+
+           
         </div>
     </form>
 </body>
